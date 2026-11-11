@@ -1,0 +1,318 @@
+// Every colour from Flarum 2's CSS properties, so themes and dark mode carry it.
+.TrustPage {
+  color: var(--text-color);
+}
+
+.TrustPage-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.TrustPage .TrustPage-level {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--heading-color, var(--text-color));
+
+  small {
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    color: var(--muted-color);
+  }
+}
+
+.TrustPage-locked {
+  margin-left: 8px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.TrustLadder {
+  display: flex;
+  flex: 1 1 280px;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.TrustLadder-step {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted-color);
+}
+
+.TrustLadder-bar {
+  display: block;
+  height: 6px;
+  margin-bottom: 6px;
+  border-radius: 3px;
+  background: var(--control-bg);
+}
+
+.TrustLadder-step.is-done .TrustLadder-bar,
+.TrustLadder-step.is-now .TrustLadder-bar {
+  background: var(--primary-color);
+}
+
+.TrustLadder-step.is-now {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.TrustLadder-name {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.TrustPage-alert {
+  margin-bottom: 16px;
+}
+
+.TrustCard {
+  margin-bottom: 16px;
+  padding: 16px 18px;
+  border: 1px solid var(--control-bg);
+  border-radius: var(--border-radius, 6px);
+  background: var(--body-bg);
+
+  h3 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    color: var(--text-color);
+  }
+}
+
+.TrustCard-sub {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: var(--muted-color);
+}
+
+.TrustRow {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr) 120px 84px;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 0;
+  border-top: 1px solid var(--control-bg);
+
+  &:first-of-type {
+    border-top: 0;
+  }
+}
+
+.TrustRow-icon {
+  color: var(--muted-more-color, var(--muted-color));
+}
+
+.TrustRow--met .TrustRow-icon {
+  color: var(--control-success-color, var(--alert-success-bg, #2e8b57));
+}
+
+.TrustRow-label {
+  min-width: 0;
+  color: var(--text-color);
+
+  em {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--muted-color);
+  }
+}
+
+.TrustRow-meter,
+.TrustAdmin-meter {
+  display: block;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--control-bg);
+
+  b {
+    display: block;
+    height: 100%;
+    border-radius: 4px;
+    background: var(--primary-color);
+  }
+}
+
+.TrustRow--met .TrustRow-meter b {
+  background: var(--control-success-color, #2e8b57);
+}
+
+.TrustRow-num {
+  text-align: right;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted-color);
+}
+
+.TrustUnlocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(~"min(220px, 100%)", 1fr));
+  gap: 8px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    min-width: 0;
+    padding: 8px 10px;
+    border-radius: var(--border-radius, 6px);
+    background: var(--control-bg);
+    color: var(--control-color);
+    font-size: 13px;
+  }
+
+  .icon {
+    width: 16px;
+    color: var(--primary-color);
+    text-align: center;
+  }
+}
+
+.TrustHistory {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    padding: 5px 0;
+    font-size: 13px;
+    color: var(--text-color);
+  }
+
+  em {
+    font-style: normal;
+    color: var(--muted-color);
+  }
+}
+
+.TrustHistory-time {
+  flex-shrink: 0;
+  min-width: 90px;
+  color: var(--muted-color);
+}
+
+.TrustHistory-icon {
+  color: var(--muted-color);
+}
+
+.TrustHistory-icon--promoted {
+  color: var(--control-success-color, #2e8b57);
+}
+
+.TrustHistory-icon--demoted,
+.TrustHistory-icon--silenced,
+.TrustHistory-icon--spam {
+  color: var(--control-danger-color, #d83e3e);
+}
+
+.TrustPage-note,
+.TrustPage-empty {
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: var(--muted-color);
+}
+
+.TrustPage-staff {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px dashed var(--control-bg);
+  border-radius: var(--border-radius, 6px);
+  color: var(--control-color);
+}
+
+.TrustPage-staffNote {
+  margin: 0 0 10px;
+  color: var(--text-color);
+}
+
+.TrustPage-staffButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.TrustModal-now {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: var(--muted-color);
+}
+
+.TrustModal-levels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  .Button {
+    flex: 1 1 70px;
+  }
+
+  // The modal body is --control-bg too: unpicked levels need their own ground.
+  .Button:not(.Button--primary) {
+    background: var(--body-bg);
+    color: var(--control-color);
+  }
+}
+
+.TrustSilenced {
+  margin: 12px 0 0;
+}
+
+.TrustLimits {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.TrustLimit {
+  font-size: 12px;
+  white-space: nowrap;
+  color: var(--muted-color);
+}
+
+.TrustLimit--over {
+  font-weight: 600;
+  color: var(--control-danger-color, #d83e3e);
+}
+
+@media (max-width: 767px) {
+  .TrustRow {
+    grid-template-columns: 20px minmax(0, 1fr) auto;
+
+    .TrustRow-meter {
+      grid-column: ~"2 / 4";
+      grid-row: 2;
+    }
+  }
+
+  .TrustHistory-time {
+    min-width: 70px;
+  }
+}
+
+.TrustMessagesNote {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--muted-color);
+}

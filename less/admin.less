@@ -1,0 +1,307 @@
+.TrustAdmin {
+  color: var(--text-color);
+}
+
+.TrustAdmin-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--control-bg);
+}
+
+.TrustAdmin-tab {
+  padding: 10px 12px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--control-color);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &.is-active {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+  }
+}
+
+.TrustAdmin-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.TrustAdmin-stat {
+  min-width: 0;
+  padding: 12px 14px;
+  border-radius: var(--border-radius, 6px);
+  background: var(--control-bg);
+}
+
+.TrustAdmin-statNum {
+  font-size: 24px;
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-color);
+}
+
+.TrustAdmin-statLabel,
+.TrustAdmin-statMoves {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  color: var(--muted-color);
+}
+
+.TrustAdmin-dist {
+  display: flex;
+  height: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--control-bg);
+
+  span {
+    display: block;
+  }
+}
+
+.TrustAdmin-dist--0 { background: var(--muted-more-color, #a1afc0); }
+.TrustAdmin-dist--1 { background: color-mix(in srgb, var(--primary-color) 55%, var(--body-bg)); }
+.TrustAdmin-dist--2 { background: var(--primary-color); }
+.TrustAdmin-dist--3 { background: var(--control-success-color, #2e8b57); }
+.TrustAdmin-dist--4 { background: #c58b12; }
+
+.TrustAdmin-two {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 18px;
+}
+
+.TrustAdmin-box {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--control-bg);
+  border-radius: var(--border-radius, 6px);
+
+  h4 {
+    margin: 0;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--control-bg);
+    font-size: 13px;
+    color: var(--text-color);
+  }
+}
+
+.TrustAdmin-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 9px 14px;
+  border-top: 1px solid var(--control-bg);
+  font-size: 13px;
+  color: var(--text-color);
+
+  &:first-of-type {
+    border-top: 0;
+  }
+}
+
+.TrustAdmin-rowMain {
+  flex: 1;
+  min-width: 0;
+
+  em {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--muted-color);
+  }
+}
+
+html:not(#x-hi) .TrustAdmin-rowMain a {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.TrustAdmin-meter {
+  flex-shrink: 0;
+  width: 70px;
+}
+
+.TrustAdmin-pill {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 10px;
+  background: var(--control-bg);
+  color: var(--control-color);
+  font-size: 11px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.TrustAdmin-pill--promoted {
+  background: color-mix(in srgb, var(--control-success-color, #2e8b57) 18%, transparent);
+  color: var(--control-success-color, #2e8b57);
+}
+
+.TrustAdmin-pill--demoted,
+.TrustAdmin-pill--silenced,
+.TrustAdmin-pill--gatehouse {
+  background: color-mix(in srgb, var(--control-danger-color, #d83e3e) 15%, transparent);
+  color: var(--control-danger-color, #d83e3e);
+}
+
+.TrustAdmin-empty {
+  margin: 0;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--muted-color);
+}
+
+.TrustAdmin-run {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--muted-color);
+}
+
+.TrustAdmin-gridWrap {
+  margin-bottom: 16px;
+  overflow-x: auto;
+  border: 1px solid var(--control-bg);
+  border-radius: var(--border-radius, 6px);
+}
+
+.TrustAdmin-grid {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 13px;
+
+  th,
+  td {
+    padding: 8px 10px;
+    border-top: 1px solid var(--control-bg);
+    text-align: left;
+    vertical-align: middle;
+    color: var(--text-color);
+  }
+
+  thead th {
+    border-top: 0;
+    background: var(--control-bg);
+    color: var(--control-color);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  th[scope='row'] {
+    font-weight: normal;
+
+    em {
+      display: block;
+      font-size: 11px;
+      font-style: normal;
+      color: var(--muted-color);
+    }
+  }
+
+  .FormControl {
+    padding: 5px 8px;
+  }
+}
+
+.TrustAdmin-sticky {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--body-bg);
+}
+
+thead .TrustAdmin-sticky {
+  background: var(--control-bg);
+}
+
+.TrustAdmin-num {
+  width: 80px;
+  display: inline-block;
+}
+
+.TrustAdmin-name {
+  width: 110px;
+}
+
+.TrustAdmin-from {
+  width: auto;
+  display: inline-block;
+}
+
+.TrustAdmin-na,
+.TrustAdmin-staffOnly {
+  color: var(--muted-color) !important;
+}
+
+.TrustAdmin-staffOnly {
+  vertical-align: top !important;
+}
+
+.TrustAdmin-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+
+.TrustAdmin-integrations {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid var(--control-bg);
+    color: var(--text-color);
+
+    > .icon {
+      margin-top: 3px;
+      color: var(--muted-color);
+    }
+
+    &.is-on > .icon {
+      color: var(--control-success-color, #2e8b57);
+    }
+  }
+
+  .helpText {
+    margin: 4px 0 6px;
+  }
+}
+
+.TrustAdmin-save {
+  margin-top: 16px;
+}
+
+.TrustAdmin-spam .Form-group .FormControl {
+  max-width: 120px;
+}
+
+@media (max-width: 767px) {
+  .TrustAdmin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .TrustAdmin-two {
+    grid-template-columns: 1fr;
+  }
+}
