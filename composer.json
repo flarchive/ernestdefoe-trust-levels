@@ -1,0 +1,127 @@
+{
+    "name": "ernestdefoe/trust-levels",
+    "description": "Trust Levels: members earn trust by taking part, the way Discourse does it. Five levels from New to Leader, set by days visited, reading, replies and likes; each level unlocks more, new accounts get limits that make spam useless, and posts the community flags are hidden at once.",
+    "keywords": [
+        "flarum",
+        "flarum-extension",
+        "trust levels",
+        "trust",
+        "spam",
+        "moderation",
+        "community"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ernest Defoe",
+            "email": "ernestdefoe@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/ernestdefoe/trust-levels",
+    "support": {
+        "issues": "https://github.com/ernestdefoe/trust-levels/issues",
+        "source": "https://github.com/ernestdefoe/trust-levels"
+    },
+    "funding": [
+        {
+            "type": "other",
+            "url": "https://buymeacoffee.com/ernestdefoe"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "flarum/core": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ErnestDefoe\\TrustLevels\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ErnestDefoe\\TrustLevels\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Trust Levels",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-shield-halved",
+                "backgroundColor": "#2e8b57",
+                "color": "#fff"
+            },
+            "optional-dependencies": [
+                "flarum/likes",
+                "flarum/flags",
+                "flarum/gdpr",
+                "flarum/approval",
+                "flarum/mentions",
+                "flarum/messages",
+                "flarum/suspend",
+                "fof/upload",
+                "ernestdefoe/docket",
+                "ernestdefoe/gatehouse",
+                "ernestdefoe/sleuth",
+                "ernestdefoe/ladder",
+                "ernestdefoe/buzz",
+                "ernestdefoe/onramp",
+                "fof/polls",
+                "fof/reactions",
+                "fof/user-bio"
+            ]
+        }
+    },
+    "require-dev": {
+        "ernestdefoe/gatehouse": "^1.4",
+        "flarum/approval": "^2.0",
+        "flarum/flags": "^2.0",
+        "flarum/gdpr": "^2.0",
+        "flarum/likes": "^2.0",
+        "flarum/mentions": "^2.0",
+        "flarum/messages": "^2.0",
+        "flarum/phpstan": "^2.0",
+        "flarum/suspend": "^2.0",
+        "flarum/tags": "^2.0",
+        "flarum/testing": "^2.0"
+    },
+    "suggest": {
+        "flarum/likes": "Likes given and received count toward levels",
+        "flarum/flags": "Spam defense: reported posts are hidden and new authors put on hold",
+        "flarum/suspend": "Suspensions count against Regular; Confirm spam suspends",
+        "flarum/approval": "A New member's first posts wait for approval",
+        "flarum/mentions": "A per-level limit on people mentioned in a post",
+        "flarum/messages": "A per-level limit on private messages a day",
+        "flarum/gdpr": "Trust data in exports, erased and reset with the account",
+        "fof/upload": "Attaching files opens at a level you choose",
+        "fof/polls": "Members on hold can't vote",
+        "fof/reactions": "Members on hold can't react",
+        "fof/user-bio": "Members on hold can't edit their bio",
+        "ernestdefoe/docket": "Crowd moderation weighs each reporter by level",
+        "ernestdefoe/gatehouse": "A new member put on hold goes back to the approval queue",
+        "ernestdefoe/sleuth": "A member linked to a banned account stays New",
+        "ernestdefoe/ladder": "Ranks members see, kept apart from trust levels",
+        "ernestdefoe/buzz": "\"Ana is now a Regular\" in the activity feed",
+        "ernestdefoe/onramp": "A \"Reach a trust level\" step"
+    },
+    "scripts": {
+        "test": [
+            "@test:integration"
+        ],
+        "test:integration": "phpunit -c tests/phpunit.integration.xml",
+        "test:setup": "@php tests/integration/setup.php",
+        "analyse:phpstan": "phpstan analyse"
+    },
+    "scripts-descriptions": {
+        "test": "Runs all tests.",
+        "test:integration": "Runs all integration tests.",
+        "test:setup": "Sets up a database for use with integration tests. Execute this only once.",
+        "analyse:phpstan": "Run static analysis"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true
+}
